@@ -93,11 +93,11 @@ public class GeoLocator {
         try {
             logger.trace("Command line arguments: {}", (Object) args);
             String arg = args.length > 0 ? args[0] : null;
+            logger.debug(arg);
             logger.info("Geolocation: {}", new GeoLocator().getGeoLocation(arg));
         } catch (IOException e) {
+            System.err.println(e.getMessage());
             logger.error("Exception caught:", e);
-            logger.info("https://github.com/ud-swe/ip-geolocator");
-            logger.debug("This is debug statement");
         }
     }
 
