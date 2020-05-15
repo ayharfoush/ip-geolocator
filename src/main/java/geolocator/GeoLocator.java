@@ -89,12 +89,15 @@ public class GeoLocator {
     }
 
     public static void main(String[] args) throws IOException {
+
         try {
             logger.trace("Command line arguments: {}", (Object) args);
             String arg = args.length > 0 ? args[0] : null;
             logger.info("Geolocation: {}", new GeoLocator().getGeoLocation(arg));
         } catch (IOException e) {
             logger.error("Exception caught:", e);
+            logger.info("https://github.com/ud-swe/ip-geolocator");
+            logger.debug("This is debug statement");
         }
     }
 
